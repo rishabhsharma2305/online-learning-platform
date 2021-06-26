@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            
+            height: 100px;
+            text-align: center;
+            font-size: 60px;
+            background-color: blueviolet;
+        }
+        .btn{
+            
+            display: inline-flex;
+            height: 200px;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            background-image: url('./img/library.jpg');
+        }
+        .btn-teacher{
+            height: 200px;
+            padding: 40px
+        }
+        .btn-student{
+            height: 200px;
+            padding: 40px
+        }
+    </style>
+</head>
+<body>
+    <header class="head">Online learning platform</header>
+    <div class="btn">
+    <button class="btn-teacher" onclick="location.href='/teacher'">I am a teacher</button>
+    <button class="btn-student" onclick="location.href='/student'">I am a student</button>
+    </div>
+
+    <script>
+        function redirect(url){
+            document.getElementsByClassName('btn-teacher')[0].window.location.href="teacher.html";
+            // window.location.href= "teacher.html";
+        }
+    </script>
+</body>
+</html>

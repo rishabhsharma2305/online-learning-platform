@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #quiz{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz">
+        <button onclick="addQuestion()">Add question</button>
+    </div>
+    <script>
+        function addQuestion(){
+            var form= document.createElement('form');
+            var ques= document.createElement('input');
+            ques.placeholder="Add a quetion"
+            var op1= document.createElement('input');
+            op1.placeholder="Option 1";
+            var op2= document.createElement('input');
+            op2.placeholder="Option 2";
+            var op3= document.createElement('input');
+            op3.placeholder="Option 3";
+            var corr= document.createElement('input');
+            corr.placeholder="correct option";
+            var point= document.createElement('input');
+            point.placeholder="total points";
+            var btn= document.createElement('button');
+            btn.innerText="Add Question";
+            form.appendChild(ques)
+            form.appendChild(op1);
+            form.appendChild(op2);
+            form.appendChild(op3);
+            form.appendChild(corr);
+            form.appendChild(point);
+            form.appendChild(btn);
+            form.action= "/addQuestion";
+            form.method= 'POST';
+            document.getElementById('quiz').appendChild(form);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .courseForm{
+            
+            display: inline-block;
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            background-image: url('./img/books.jpg');
+        }
+        .form-inline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .form-inline input{
+            margin: 5px 10px 5px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        .form-inline button{
+            
+            border-radius: 3px;
+            padding: 6px;
+            background-color: lightgreen
+        }
+        .head{
+            
+            height: 100px;
+            text-align: center;
+            font-size: 60px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">Add a course</header>
+
+    <div class="courseForm">
+        <form class="form-inline" action="/addCourse" method="POST">
+            <input type="text" id="courseID" name="cid" placeholder="enter course ID">
+            <input type="text" id="courseName" name="cname" placeholder="enter course name">
+            <button type="submit" id="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

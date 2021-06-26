@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            border: 2px solid black;
+            height: 100px;
+            text-align: center;
+            font-size: 60px;
+            background-color: blueviolet;
+        }
+        .btn{
+            display: inline-flex;
+            height: 200px;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        .btn-teacher{
+            height: 200px;
+            padding: 40px
+        }
+        .btn-student{
+            height: 200px;
+            padding: 40px
+        }
+        .btn-course{
+            height: 200px;
+            padding: 40px
+        }
+        .btn-student{
+            height: 200px;
+            padding: 40px
+        }
+        .btn-quiz{
+            height: 200px;
+            padding: 40px
+        }
+        .crs{
+    
+            display: inline-flex;
+            height: 200px;
+            width: 60%;
+            bottom: 10px;
+            position: absolute;
+            margin-left: 3px;
+        }
+        #crs-ls{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">Teacher's section</header>
+    <div class="crs">
+        <ul id="crs-ls">No Courses yet</ul>
+    </div>
+    <div class="btn">
+        <button class="btn-teacher" onclick="window.location.href='/addCourse'">Add course</button>
+        <button class="btn-quiz" onclick="window.location.href='/addQuiz'">Add a quiz</button>
+        <button class="btn-course" onclick="location.href='/teacher'">Edit a course</button>
+        <button class="btn-course" onclick="location.href='/isData'">See all course</button>
+        <button class="btn-course" onclick="location.href='/removeCourse'">Remove a course</button>
+    </div>
+    <script>
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            console.log(responseText);
+            return xmlHttp.responseText;
+        }
+        if(httpGet('/isData')=='true'){
+            var parentNode= document.createElement('a');
+            parentNode.href="www.google.com";
+            var node= document.createElement('LI');
+            var text= document.createTextNode('java');
+            node.appendChild(text);
+            parentNode.appendChild(node);
+            var el= document.getElementById('crs-ls');
+            el.appendChild(parentNode);
+        }
+        else{
+            var para= document.createElement('h2');
+            var text= document.createTextNode("No courses yet");
+            para.appendChild(text);
+            var el= document.getElementById('crs-ls');
+            el.appendChild(para);
+        }
+     </script>
+</body>
+</html>
